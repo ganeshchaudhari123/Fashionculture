@@ -1,0 +1,143 @@
+.page {
+  padding-bottom: var(--section-padding);
+}
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  opacity: 0.15;
+}
+
+.title {
+  font-size: clamp(60px, 12vw, 140px);
+  color: var(--fc-white);
+  line-height: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.philosophy {
+  padding: var(--section-padding) 0;
+  overflow: hidden;
+}
+
+.philGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fc-orange-light);
+  margin-bottom: 16px;
+}
+
+.philTitle {
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--fc-white);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.philText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  color: var(--fc-white-70);
+  line-height: 1.7;
+}
+
+.images {
+  position: relative;
+  height: 600px;
+}
+
+.img1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  border-radius: var(--radius-lg);
+  z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.img2 {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 55%;
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+.values {
+  padding: var(--section-padding) 0;
+  background: var(--fc-black-2);
+}
+
+.valSectionTitle {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.valGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.valCard {
+  padding: 40px 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+.valNum {
+  display: block;
+  font-size: 48px;
+  color: rgba(255, 69, 0, 0.2);
+  margin-bottom: 24px;
+}
+
+.valTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fc-white);
+  margin-bottom: 12px;
+}
+
+.valDesc {
+  font-size: 14px;
+  color: var(--fc-white-50);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .philGrid { grid-template-columns: 1fr; gap: 60px; }
+  .images { height: 400px; }
+  .valGrid { grid-template-columns: 1fr; }
+}

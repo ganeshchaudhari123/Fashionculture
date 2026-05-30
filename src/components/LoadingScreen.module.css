@@ -1,0 +1,82 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--fc-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.logoWrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(255, 69, 0, 0.4);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--fc-white-50);
+}
+
+.barWrapper {
+  width: 220px;
+  height: 2px;
+  background: var(--fc-white-10);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: var(--fc-gradient);
+  border-radius: 99px;
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--fc-orange);
+  opacity: 0.4;
+  top: calc(50% + (var(--i) - 6) * 40px);
+  left: calc(50% + sin(var(--i) * 30deg) * 200px);
+  animation: floatParticle calc(2s + var(--i) * 0.3s) ease-in-out infinite alternate;
+}
+
+@keyframes floatParticle {
+  from { transform: translateY(0) scale(1); opacity: 0.2; }
+  to   { transform: translateY(-20px) scale(1.5); opacity: 0.6; }
+}

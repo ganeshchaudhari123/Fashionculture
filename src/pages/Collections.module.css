@@ -1,0 +1,133 @@
+.page {
+  padding-top: calc(var(--nav-height) + 60px);
+  padding-bottom: var(--section-padding);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 80px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fc-orange-light);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(48px, 8vw, 80px);
+  color: var(--fc-white);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--fc-white-50);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.collection {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.imageRight {
+  flex-direction: row-reverse;
+}
+
+.imageInner {
+  width: 70%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--glass-border);
+}
+
+.imageInner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.4);
+  transition: background var(--transition-base);
+}
+
+.collection:hover .overlay {
+  background: rgba(8, 8, 8, 0.2);
+}
+
+.content {
+  position: absolute;
+  width: 45%;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.imageRight .content {
+  left: 0;
+}
+
+.imageWrap:not(.imageRight) .content {
+  right: 0;
+}
+
+.colSub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.colName {
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1;
+  color: var(--fc-white);
+  margin-bottom: 16px;
+}
+
+.colDesc {
+  font-size: 14px;
+  color: var(--fc-white-70);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.btn {
+  border: none !important;
+  color: #fff !important;
+}
+
+@media (max-width: 900px) {
+  .list { gap: 60px; }
+  .imageWrap, .imageRight { flex-direction: column; gap: 20px; }
+  .imageInner { width: 100%; aspect-ratio: 4/5; }
+  .content { position: relative; width: 100%; padding: 32px 24px; }
+  .imageRight .content, .imageWrap:not(.imageRight) .content { left: auto; right: auto; }
+}

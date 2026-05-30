@@ -1,0 +1,120 @@
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: rgba(255, 69, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 69, 0, 0.08);
+}
+
+.imageWrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--fc-black-3);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 8, 0.5) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .imageOverlay {
+  opacity: 1;
+}
+
+.body {
+  padding: 16px;
+}
+
+.category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fc-orange-light);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--fc-white-90);
+  margin-bottom: 12px;
+  transition: color var(--transition-fast);
+}
+
+.card:hover .title {
+  color: var(--fc-white);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--fc-white);
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fc-white-70);
+  transition: all var(--transition-fast);
+}
+
+.addBtn:hover {
+  background: var(--fc-gradient);
+  border-color: transparent;
+  color: var(--fc-white);
+  box-shadow: var(--glow-orange-sm);
+}
+
+.addBtn.added {
+  background: rgba(0, 210, 100, 0.15);
+  border-color: rgba(0, 210, 100, 0.3);
+  color: #00D264;
+}
